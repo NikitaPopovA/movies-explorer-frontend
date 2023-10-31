@@ -1,0 +1,151 @@
+.login {
+    margin: 69px auto;
+    width: 396px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.login__content {
+    width: 100%;
+}
+
+.login__title {
+    margin: 40px 0;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.login__label {
+    display: flex;
+    height: 88px;
+    flex-direction: column;
+    font-family: var(--main-font);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--text-grey);
+}
+
+.login__input {
+    margin: 10px 0 10px;
+    padding: 15px 0 15px 15px;
+    width: 100%;
+    height: 46px;
+    box-sizing: border-box;
+    border: none;
+    background-color: var(--bg-color-dark-grey);
+    border-radius: 8px;
+    color: var(--white);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.login__input:focus {
+    outline: 1px solid var(--blue);
+}
+
+.login__link {
+    text-decoration: none;
+}
+
+.login__signin {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--blue);
+}
+
+.login__signin:hover {
+    opacity: 0.8;
+}
+
+.login__input-error {
+    color: var(--red);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.login__text {
+    margin: 16px 0 0;
+    font-family: var(--main-font);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--text-grey);
+    text-align: center;
+}
+
+.login__button {
+    margin: 179px 0 0;
+    padding: 0;
+    width: 100%;
+    height: 45px;
+    border-radius: 3px;
+    font-family: var(--main-font);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: var(--white);
+    border: none;
+    background-color: var(--blue);
+    cursor: pointer;
+}
+
+.login__button:hover {
+    opacity: 0.8;
+}
+
+.login__button_disabled {
+    background-color: var(--bg-color-disabled);
+    color: var(--color-disabled);
+    cursor: default;
+}
+
+.login__logo:hover {
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 770px) {
+    .login {
+        margin: 232px auto;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .login {
+        margin: 56px auto 30px;
+        max-width: 260px;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .login__form {
+        width: 100%;
+    }
+
+    .login__title {
+        margin: 50px 0 80px;
+        text-align: center;
+    }
+
+    .login__button {
+        margin: 267px 0 0;
+        font-size: 12px;
+    }
+
+    .login__text {
+        margin: 14px 0 0;
+        font-size: 12px;
+    }
+}
