@@ -10,7 +10,7 @@
 
 Backend API : https://api.popov.nomoredomainsrocks.ru/
 
-Ccылка на Pull requests : https://github.com/NikitaPopovA/movies-explorer-frontend/pull/2
+[Ccылка на Pull requests] (https://github.com/NikitaPopovA/movies-explorer-frontend/pull/2)
 
 IP 51.250.65.206
 
