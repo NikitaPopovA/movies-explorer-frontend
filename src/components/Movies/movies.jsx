@@ -220,12 +220,22 @@ function Movies({ isLoggedIn }) {
 
     function maxShowCardsDisplay() {
         const screenWidth = window.innerWidth;
-        return screenWidth > 768 ? 12 : screenWidth > 480 ? 8 : 5;
+        if (screenWidth > 1023) {
+            return 12;
+        } else if (screenWidth > 750) {
+            return 8;
+        } else {
+            return 6;
+        }
     }
 
     function calculateCardCount() {
         const screenWidth = window.innerWidth;
-        return screenWidth > 768 ? 3 : 2;
+        if (screenWidth > 1020) {
+            return 3;
+        } else if (screenWidth < 1023) {
+            return 2;
+        }
     }
 
     const handleLoadMore = () => {
@@ -247,14 +257,12 @@ function Movies({ isLoggedIn }) {
     const handleResize = () => {
         const newShownCards = maxShowCardsDisplay();
         setShownCards(newShownCards);
-        updateLoadMoreButton(newShownCards);
     };
 
     useEffect(() => {
         window.addEventListener("resize", handleResize);
         return () => {
             window.removeEventListener("resize", handleResize);
-            updateLoadMoreButton(maxShowCardsDisplay());
         };
     }, []);
 
