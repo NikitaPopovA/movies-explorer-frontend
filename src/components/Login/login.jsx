@@ -11,9 +11,9 @@ import logo from "../../images/Logo/logo.svg";
 
 // Login COMPONENT
 function Login({ onLogin, serverError, isLoggedIn }) {
-    const [formData, setFormData] = useState({ email: "", password: "" });
-    const [formErrors, setFormErrors] = useState({ email: "", password: "" });
-    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [formData, setFormData] = useState({ email: "", password: "" }); 
+    const [formErrors, setFormErrors] = useState({ email: "", password: "" }); 
+    const [isSubmitting, setIsSubmitting] = useState(false); 
     const navigate = useNavigate();
 
     const isFormValid = () =>

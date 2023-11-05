@@ -10,15 +10,16 @@ import SearchForm from "../SearchForm/searchForm";
 import MoviesCardSav from "../MoviesCardSav/MoviesCardSav";
 import Footer from "../Footer/footer";
 import { api } from "../../utils";
+import {STORAGE_KEYS} from "../../utils/constants/system";
 
 // SavedMovies COMPONENT
 function SavedMovies({ isLoggedIn }) {
-    const [isLoading, setIsLoading] = useState(false);
-    const [errors, setErrors] = useState(null);
-    const [savedMovies, setSavedMovies] = useState([]);
+    const [isLoading, setIsLoading] = useState(false); 
+    const [errors, setErrors] = useState(null); 
+    const [savedMovies, setSavedMovies] = useState([]); 
     const [filteredMovies, setFilteredMovies] = useState([]);
-    const [isShortMovies, setIsShortMovies] = useState(false);
-    const searUseRef = useRef("");
+    const [isShortMovies, setIsShortMovies] = useState(false); 
+    const searUseRef = useRef(""); 
 
     useEffect(() => {
         setIsLoading(true);
@@ -85,9 +86,11 @@ function SavedMovies({ isLoggedIn }) {
     const handleDeleteMovie = (movieId) => {
         api.deleteCard(movieId)
             .then(() => {
-                setSavedMovies((prevSavedMovies) =>
-                    prevSavedMovies.filter((movie) => movie._id !== movieId)
-                );
+                setSavedMovies((prevSavedMovies) => {
+                    const res = prevSavedMovies.filter((movie) => movie._id !== movieId)
+                    localStorage.setItem(STORAGE_KEYS.SAVED_MOVIES, JSON.stringify(res))
+                    return res
+                });
                 setFilteredMovies((prevFilteredMovies) =>
                     prevFilteredMovies.filter((movie) => movie._id !== movieId)
                 );

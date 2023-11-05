@@ -1,3 +1,5 @@
+import { API_URL } from './constants/system'
+
 class MainApi {
     constructor(options) {
         this._url = options.url;
@@ -39,5 +41,5 @@ class MainApi {
 }
 
 export const api = new MainApi({
-    url: "https://api.popov.nomoredomainsrocks.ru",
+    url: `${API_URL}`,
 });

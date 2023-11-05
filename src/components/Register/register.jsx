@@ -25,10 +25,11 @@ function Register({ onRegister, serverError, isLoggedIn }) {
 
     const navigate = useNavigate();
 
+    // Функция для проверки валидности формы
     const isFormValid = () => {
         return (
-            Object.values(formData).every((value) => value !== "") &&
-            Object.values(formErrors).every((error) => error === "") &&
+            Object.values(formData).every((value) => value !== "") && 
+            Object.values(formErrors).every((error) => error === "") && 
             !isSubmitting
         );
     };
@@ -121,7 +122,7 @@ function Register({ onRegister, serverError, isLoggedIn }) {
                                 name="name"
                                 type="text"
                                 placeholder="Имя"
-                                minLength="6"
+                                minLength="2"
                                 maxLength="30"
                                 autoComplete="off"
                                 required

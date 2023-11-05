@@ -11,7 +11,6 @@ function MoviesCardList({
     savedMovies,
     onSaveMovie,
     onCardDelete,
-    selectedMovieId,
 }) {
     if (!Array.isArray(isMovies) || isMovies.length === 0) {
         return null;
@@ -20,6 +19,7 @@ function MoviesCardList({
     return (
         <section className="cards">
             {isMovies.map((movie) => {
+
                 const {
                     _id,
                     id,
@@ -33,9 +33,8 @@ function MoviesCardList({
                     description,
                     owner,
                     image,
+                    thumbnail
                 } = movie;
-                const imageSrc = `https://api.nomoreparties.co/${image.url}`;
-                const thumbnailSrc = `https://api.nomoreparties.co/${image.formats.thumbnail.url}`;
 
                 return (
                     <MoviesCard
@@ -54,9 +53,8 @@ function MoviesCardList({
                         savedMovies={savedMovies}
                         onSaveMovie={onSaveMovie}
                         onCardDelete={onCardDelete}
-                        selectedMovieId={selectedMovieId}
-                        image={imageSrc}
-                        thumbnail={thumbnailSrc}
+                        image={image}
+                        thumbnail={thumbnail}
                     />
                 );
             })}

@@ -1,3 +1,5 @@
+import { API_URL } from './constants/system'
+
 class MainApiAuth {
     constructor({ baseUrl, headers }) {
         this.baseUrl = baseUrl;
@@ -33,7 +35,7 @@ class MainApiAuth {
 }
 
 export const apiAuth = new MainApiAuth({
-    baseUrl: "https://api.popov.nomoredomainsrocks.ru",
+    baseUrl: `${API_URL}`,
     headers: {
         "Content-Type": "application/json",
     },

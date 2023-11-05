@@ -1,3 +1,5 @@
+import { IMAGE_URL } from './constants/system'
+
 class MoviesApi {
     constructor(options) {
         this._url = options.url;
@@ -31,5 +33,5 @@ class MoviesApi {
 }
 
 export const moviesApi = new MoviesApi({
-    url: "https://api.nomoreparties.co",
+    url: `${IMAGE_URL}`,
 });

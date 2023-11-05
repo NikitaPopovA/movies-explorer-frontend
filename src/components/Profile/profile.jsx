@@ -12,17 +12,19 @@ import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 // Profile COMPONENT
 function Profile(props) {
-    const currentUser = useContext(CurrentUserContext);
-    const [isEditing, setIsEditing] = useState(false);
-    const [name, setName] = useState(currentUser.name || "");
-    const [email, setEmail] = useState(currentUser.email || "");
-    const [initialName, setInitialName] = useState(currentUser.name || "");
-    const [initialEmail, setInitialEmail] = useState(currentUser.email || "");
-    const [hasIsChanges, setHasIsChanges] = useState(false);
-    const [updateSuccess, setUpdateSuccess] = useState(false);
-    const [isSubmitting, setIsSubmitting] = useState(false);
+    const currentUser = useContext(CurrentUserContext); 
+    const [isEditing, setIsEditing] = useState(false); 
 
-    const [formErrors, setFormErrors] = useState({ name: "", email: "" });
+    const [name, setName] = useState(currentUser.name || ""); 
+    const [email, setEmail] = useState(currentUser.email || "");
+
+    const [initialName, setInitialName] = useState(currentUser.name || ""); 
+    const [initialEmail, setInitialEmail] = useState(currentUser.email || "");
+
+    const [hasIsChanges, setHasIsChanges] = useState(false);
+    const [updateSuccess, setUpdateSuccess] = useState(false); 
+    const [isSubmitting, setIsSubmitting] = useState(false);  
+    const [formErrors, setFormErrors] = useState({ name: "", email: "" }); 
 
     const isFormValid = () => {
         return (

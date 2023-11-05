@@ -8,16 +8,16 @@ import "./searchForm.css";
 // SearchForm COMPONENT
 function SearchForm({
     onHandleSearchSubmit,
-    isShortMovies,
-    setIsShortMovies,
-    handleCheckboxChange,
-    defaultSearchText,
+    isShortMovies,  
+    setIsShortMovies, 
+    handleCheckboxChange, 
+    defaultSearchText,  
 }) {
-    const [searchText, setSearchText] = useState(defaultSearchText || "");
-    const [isErrorVisible, setIsErrorVisible] = useState(false);
-    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [searchText, setSearchText] = useState(defaultSearchText || "");  
+    const [isErrorVisible, setIsErrorVisible] = useState(false);  
+    const [isSubmitting, setIsSubmitting] = useState(false); 
 
-    const location = useLocation();
+    const location = useLocation();  
 
     const handleInputChange = (evt) => {
         setSearchText(evt.target.value);
@@ -39,7 +39,7 @@ function SearchForm({
         setIsSubmitting(true);
 
         try {
-            if (!searchText.trim()) {
+            if (!searchText?.trim()) {
                 setIsErrorVisible(true);
             } else {
                 await onHandleSearchSubmit(searchText);

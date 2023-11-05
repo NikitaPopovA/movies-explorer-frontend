@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 
 // ProtectedRoute COMPONEN
 function ProtectedRoute({ element: Component, ...props }) {
-    const isLoggedIn = localStorage.getItem("jwt") !== null;
+    const isLoggedIn = localStorage.getItem('jwt')
     return (
         <>
             {isLoggedIn ? (

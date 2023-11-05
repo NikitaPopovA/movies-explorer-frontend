@@ -16,6 +16,7 @@ import SavedMovies from "../SavedMovies/savedMovies";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { api, apiAuth } from "../../utils";
+import { TIMEOUT_DURATION } from "../../utils/constants/system";
 
 // App COMPONENT
 function App() {
@@ -36,7 +37,7 @@ function App() {
             }
         } catch (errors) {
             setServerError("Пользователь с таким email уже существует!");
-            setTimeout(() => setServerError(""), 5000);
+            setTimeout(() => setServerError(""), TIMEOUT_DURATION);
         }
     }
 
@@ -48,32 +49,17 @@ function App() {
             navigate("/movies");
         } catch (errors) {
             setServerError("Неверное имя пользователя или пароль!");
-            setTimeout(() => setServerError(""), 5000);
+            setTimeout(() => setServerError(""), TIMEOUT_DURATION);
         }
     }
 
     useEffect(() => {
-        async function checkUserAuthorize() {
-            if (!localStorage.getItem("jwt")) return;
-            try {
-                const res = await apiAuth.checkToken(
-                    localStorage.getItem("jwt")
-                );
-                if (res) {
-                    setIsLoggedIn(true);
-                }
-            } catch (err) {
-                setIsLoggedIn(false);
-                console.error(err);
-            }
-        }
-        checkUserAuthorize();
-    }, [isLoggedIn]);
-
-    useEffect(() => {
-        if (!isLoggedIn) return;
+        if (!localStorage.getItem("jwt")) return;
         api.getUserInfo()
-            .then((data) => setCurrentUser(data))
+            .then((data) => {
+                setCurrentUser(data);
+                setIsLoggedIn(true);
+            })
             .catch((err) => console.error(err?.status || "ошибка"));
     }, [isLoggedIn]);
 
@@ -85,10 +71,10 @@ function App() {
             console.error(err);
             if (err?.status === 409) {
                 setServerError("Пользователь с таким email уже существует!");
-                setTimeout(() => setServerError(""), 5000);
+                setTimeout(() => setServerError(""), TIMEOUT_DURATION);
             } else {
                 setErrors("Ошибка при обновлении данных пользователя!");
-                setTimeout(() => setErrors(""), 5000);
+                setTimeout(() => setErrors(""), TIMEOUT_DURATION);
             }
         }
     }
