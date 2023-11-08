@@ -1,0 +1,12 @@
+.page {
+    margin: 0 auto;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: var(--dark-gray);
+    color: var(--white);
+    font-family: var(--main-font);
+}
+
+.error-message {
+    color: var(--red);
+  }

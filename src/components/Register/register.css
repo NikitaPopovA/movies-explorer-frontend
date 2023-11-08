@@ -1,0 +1,149 @@
+.register {
+    margin: 70px auto;
+    width: 396px;
+    display: flex;
+    flex-direction: column;
+    justify-content: inherit;
+}
+
+.register__logo:hover {
+    opacity: 0.8;
+}
+
+.register__content {
+    width: 100%;
+}
+
+.register__title {
+    margin: 40px 0;
+    font-family: var(--main-font);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.register__input {
+    padding: 15px 0 15px 15px;
+    margin: 10px 0 10px;
+    width: 100%;
+    height: 46px;
+    box-sizing: border-box;
+    border: none;
+    background-color: var(--bg-color-dark-grey);
+    border-radius: 8px;
+    color: var(--white);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.register__input:focus {
+    outline: 1px solid var(--blue);
+}
+
+.register__label {
+    display: flex;
+    flex-direction: column;
+    height: 88px;
+    font-family: var(--main-font);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--text-grey);
+}
+
+.register__text {
+    margin: 16px 0 0;
+    font-family: var(--main-font);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--text-grey);
+    text-align: center;
+}
+
+.register__button {
+    margin: 69px 0 0;
+    padding: 0;
+    border-radius: 3px;
+    width: 100%;
+    height: 45px;
+    font-family: var(--main-font);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: var(--white);
+    border: none;
+    background-color: var(--blue);
+    cursor: pointer;
+}
+
+.register__button_disabled {
+    background-color: var(--bg-color-disabled);
+    cursor: default;
+    color: var(--color-disabled);
+}
+
+.register__button:hover {
+    opacity: 0.8;
+}
+
+.register__link {
+    text-decoration: none;
+}
+
+.register__link:hover {
+    opacity: 0.8;
+}
+
+.register__signin {
+    color: var(--blue);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.register__input-error {
+    color: var(--red);
+    height: 10px;
+}
+
+@media screen and (max-width: 770px) {
+    .register {
+        margin: 232px auto;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .register {
+        margin: 56px auto 30px;
+        max-width: 260px;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .register__form {
+        width: 100%;
+    }
+
+    .register__title {
+        margin: 50px 0 80px;
+        text-align: center;
+    }
+
+    .register__button {
+        margin: 157px 0 0;
+        font-size: 12px;
+    }
+
+    .register__text {
+        margin: 14px 0 0;
+        font-size: 12px;
+    }
+}
