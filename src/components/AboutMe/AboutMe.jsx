@@ -5,7 +5,7 @@ import React from "react";
 import "./AboutMe.css";
 
 // IMPORT COMPONENTS
-import author from "../../images/About-me/author.jpg";
+import author from "../../images/About-me/photo_2023-11-09_09-46-16.jpg";
 
 // AboutMe COMPONENT
 function AboutMe() {

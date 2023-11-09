@@ -11,6 +11,7 @@ import MoviesCardList from "../MoviesCardList/moviesCardList";
 import Footer from "../Footer/footer";
 import { moviesApi, api, serializeBool } from "../../utils";
 import { IMAGE_URL, STORAGE_KEYS } from "../../utils/constants/system";
+import Preloader from "../Preloader/Preloader";
 
 // Movies COMPONENT
 function Movies({ isLoggedIn }) {
@@ -332,7 +333,7 @@ function Movies({ isLoggedIn }) {
                     defaultSearchText={localStorage.getItem("searchText") || ""}
                 />
                 {isLoading ? (
-                    <p className="movies__error-loading">Подождите...</p>
+                    <Preloader />
                 ) : errors ? (
                     <p className="movies__error-text">{errors}</p>
                 ) : (
